@@ -1,12 +1,14 @@
 <?php
-namespace Phile\Parser;
+namespace Phile\Plugin\Phile\Parsedown;
 
-class ParsedownParser implements ParserInterface {
+use Phile\ServiceLocator\ParserInterface;
 
-	public function __construct($config = null)
-	{
+class Parser implements ParserInterface {
+
+	public function __construct($config = null) {
 		// no settings for this parser
 	}
+
 	// overload parse with the Parsedown parser
 	public function parse($data) {
 		return \Parsedown::instance()->parse($data);

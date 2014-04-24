@@ -1,9 +1,13 @@
 <?php
+/**
+ * Plugin class
+ */
+namespace Phile\Plugin\Phile\Parsedown;
 
 /**
  * Default Phile parser plugin for Markdown
  */
-class PhileParserParsedown extends \Phile\Plugin\AbstractPlugin implements \Phile\EventObserverInterface {
+class PhileParserParsedown extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\EventObserverInterface {
 	public function __construct() {
 		\Phile\Event::registerEvent('plugins_loaded', $this);
 	}
@@ -11,7 +15,7 @@ class PhileParserParsedown extends \Phile\Plugin\AbstractPlugin implements \Phil
 	public function on($eventKey, $data = null) {
 		// check $eventKey for which you have registered
 		if ($eventKey == 'plugins_loaded') {
-			\Phile\ServiceLocator::registerService('Phile_Parser', new \Phile\Parser\ParsedownParser($this->settings));
+			\Phile\ServiceLocator::registerService('Phile_Parser', new \Phile\Plugin\Phile\Parsedown\Parser($this->settings));
 		}
 	}
 }

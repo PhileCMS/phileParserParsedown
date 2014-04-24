@@ -3,18 +3,22 @@ phileParserParsedown
 
 Use the [Parsedown](https://github.com/erusev/parsedown) parser in [Phile](https://github.com/PhileCMS/Phile).
 
-### Installation
+### 1.1 Installation (composer)
+```
+php composer.phar require phile/parsedown:*
+```
 
-* Install [Phile](https://github.com/PhileCMS/Phile)
-* [Download this repo](https://github.com/PhileCMS/phileParserParsedown/archive/master.zip) and drop it into the _Phile root directory_
+### 1.2 Installation (Download)
+
+* Install the latest version of [Phile](https://github.com/PhileCMS/Phile)
+* Clone or download this repo into `plugins/phile/parsedown`
+* add `$config['plugins']['phile\\parsedown'] = array('active' => true);` to your `config.php`
 
 Then add the Parsedown dependency to your composer.json file:
 
 ```json
 {
   "require": {
-    "twig/twig": "1.14.*",
-    "michelf/php-markdown": "1.3",
     "erusev/parsedown": "*" // the parsedown parser
   }
 }
@@ -26,8 +30,8 @@ After you have installed the plugin. You need to add the following line to your 
 
 ```php
 $config['plugins'] = array(
-  'phileParserMarkdown' => array('active' => false), // disable the default parser
-  'phileParserParsedown' => array('active' => true) // use parsedown
+  'phile\\parserMarkdown' => array('active' => false), // disable the default parser
+  'phile\\parsedown' => array('active' => true) // use parsedown
 );
 ```
 
