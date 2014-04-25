@@ -12,7 +12,14 @@ php composer.phar require phile/parsedown:*
 
 * Install the latest version of [Phile](https://github.com/PhileCMS/Phile)
 * Clone or download this repo into `plugins/phile/parsedown`
-* add `$config['plugins']['phile\\parsedown'] = array('active' => true);` to your `config.php`
+
+### 2. Activation
+
+After you have installed the plugin. You need to add the following line to your `config.php` file:
+
+```
+$config['plugins']['phile\\parsedown'] = array('active' => true);`
+```
 
 Then add the Parsedown dependency to your composer.json file:
 
